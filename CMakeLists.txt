@@ -271,8 +271,13 @@ endif()
 #Stuff in ./Dev
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Dev/Output)
 
-add_executable(Dev ${PROJECT_SOURCE_DIR}/Dev/CloudMonocularVideo.cpp)
-target_link_libraries(Dev ${PROJECT_NAME})
+add_executable(CloudMonocularVideo ${PROJECT_SOURCE_DIR}/Dev/CloudMonocularVideo.cpp)
+target_link_libraries(CloudMonocularVideo ${PROJECT_NAME})
+
+add_executable(CloudMonocularARCH ${PROJECT_SOURCE_DIR}/Dev/CloudMonocularARCH.cpp)
+target_link_libraries(CloudMonocularARCH ${PROJECT_NAME})
+
+
 
 #Old examples
 

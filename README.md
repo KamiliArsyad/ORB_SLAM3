@@ -1,4 +1,8 @@
-# ORB-SLAM3
+# Remote and Live Feed ORB-SLAM3
+### Preface from Arsyad
+Hello. This is my implementation for real time ORB-SLAM3 whose main feature is offloading the ORB extraction algorithm to the edge (implemented in [this repository](https://github.com/KamiliArsyad/cvORB-zmq-stream)). The main purpose of this implementation is to reduce the computational load on the edge device (e.g. Jetson Nano) and offload it to the cloud for it to process ("cloud" refers to the system used in this modified repository). There are a few programs you can try:
+- [CloudMonocularVideo](Dev/CloudMonocularVideo.cpp): This implementation is used for testing and does not separate the ORB extraction and tracking. Main feature of this implementation is using straight video input from the specified video file. You might find this useful if this is your first time using ORB-SLAM3 and would want to process your own monocular input. If you want to process your video input in real time from a camera, you can modify the input of the used cv::VideoCapture object to 0 (e.g. `cv::VideoCapture input(0);`).
+- [CloudMonocularARCH](Dev/CloudMonocularARCH.cpp): This implementation separates the cloud and the edge, and is the main work of this repository. The edge will be responsible for extracting the ORB features and sending them to the cloud. The cloud (this repository) will then process these features and run the rest of the ORB-SLAM3 algorithm. The main module used here is the ARCHandler module which, along with the overloaded constructors and additional modified functions in the codebase, will ensure that the ORB-SLAM3 system runs and communicates between edge and cloud smoothly.
 
 ### V1.0, December 22th, 2021
 **Authors:** Carlos Campos, Richard Elvira, Juan J. Gómez Rodríguez, [José M. M. Montiel](http://webdiis.unizar.es/~josemari/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/).
