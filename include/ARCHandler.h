@@ -21,6 +21,6 @@ namespace ORB_SLAM3
     ARCHandler(std::string ip, int port, int queue_size);
     ~ARCHandler();
 
-    void getFeaturesFast(cv::Mat &descriptors, std::vector<cv::KeyPoint> &keypoints, cv::Mat &image);
+    void getFeaturesFast(cv::Mat &descriptors, std::vector<cv::KeyPoint> &keypoints, cv::Mat &image, double &timeStamp);
   };
 } // namespace ORB_SLAM3

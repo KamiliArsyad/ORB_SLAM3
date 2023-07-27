@@ -20,7 +20,7 @@ namespace ORB_SLAM3
     socket.close();
   }
 
-  void ARCHandler::getFeaturesFast(cv::Mat &descriptors, std::vector<cv::KeyPoint> &keypoints, cv::Mat &image)
+  void ARCHandler::getFeaturesFast(cv::Mat &descriptors, std::vector<cv::KeyPoint> &keypoints, cv::Mat &image, double &timeStamp)
   {
     zmq::message_t message;
 
