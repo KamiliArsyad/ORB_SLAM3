@@ -40,6 +40,7 @@ MESSAGE(${OpenCV_VERSION})
 
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
+find_package(Zeromq REQUIRED)
 find_package(realsense2)
 
 include_directories(
@@ -82,6 +83,8 @@ src/GeometricTools.cc
 src/TwoViewReconstruction.cc
 src/Config.cc
 src/Settings.cc
+src/ARCHandler.cpp
+include/ARCHandler.h
 include/System.h
 include/Tracking.h
 include/LocalMapping.h
@@ -121,6 +124,8 @@ ${EIGEN3_LIBS}
 ${Pangolin_LIBRARIES}
 ${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so
 ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
+${ZEROMQ_LIBRARIES}
+zmq
 -lboost_serialization
 -lcrypto
 )
