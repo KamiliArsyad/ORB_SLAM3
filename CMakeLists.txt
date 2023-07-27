@@ -268,6 +268,12 @@ if(realsense2_FOUND)
     target_link_libraries(recorder_realsense_T265 ${PROJECT_NAME})
 endif()
 
+#Stuff in ./Dev
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Dev/Output)
+
+add_executable(Dev ${PROJECT_SOURCE_DIR}/Dev/CloudMonocularVideo.cpp)
+target_link_libraries(Dev ${PROJECT_NAME})
+
 #Old examples
 
 # RGB-D examples
