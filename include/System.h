@@ -120,6 +120,9 @@ public:
     // Returns the camera pose (empty if tracking fails).
     Sophus::SE3f TrackMonocular(const cv::Mat &im, const double &timestamp, const vector<IMU::Point>& vImuMeas = vector<IMU::Point>(), string filename="");
 
+    // Process the monocular frame from a remote client. The im input is not needed and a dummy is used for easiness of development.
+    // Returns the camera pose (empty if tracking fails).
+    Sophus::SE3f TrackMonocularRemote(cv::Mat &im);
 
     // This stops local mapping thread (map building) and performs only camera tracking.
     void ActivateLocalizationMode();
