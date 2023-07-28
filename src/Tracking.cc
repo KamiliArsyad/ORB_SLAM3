@@ -119,7 +119,7 @@ Tracking::Tracking(System *pSys, ORBVocabulary* pVoc, FrameDrawer *pFrameDrawer,
         }
     }
 
-    mpARCHandler = new ORB_SLAM3::ARCHandler("172.20.86.134", 9999, 0);
+    mpARCHandler = new ORB_SLAM3::ARCHandler("192.168.4.15", 9999, 0);
 
 #ifdef REGISTER_TIMES
     vdRectStereo_ms.clear();
@@ -1618,7 +1618,7 @@ Sophus::SE3f Tracking::GrabImageMonocular(const cv::Mat &im, const double &times
     return mCurrentFrame.GetPose();
 }
 
-Sophus::SE3f Tracking::GrabImageMonocularRemote( cv::Mat &imToReplace)
+Sophus::SE3f Tracking::GrabImageMonocularRemote(cv::Mat &imToReplace)
 {
     mImGray = imToReplace;
     if(mImGray.channels()==3)
@@ -1636,7 +1636,7 @@ Sophus::SE3f Tracking::GrabImageMonocularRemote( cv::Mat &imToReplace)
             cvtColor(mImGray,mImGray,cv::COLOR_BGRA2GRAY);
     }
 
-    mCurrentFrame = Frame(mImGray.cols, mImGray.rows,mpORBextractorLeft,mpORBVocabulary,mpCamera,mDistCoef,mbf,mThDepth,mpARCHandler, imToReplace,&mLastFrame,*mpImuCalib);
+    mCurrentFrame = Frame(mImGray.cols, mImGray.rows,mpORBextractorLeft,mpORBVocabulary,mpCamera,mDistCoef,mbf,mThDepth,mpARCHandler, mImGray,&mLastFrame,*mpImuCalib);
 
     mCurrentFrame.mNameFile = ""; // Need to check this later
     mCurrentFrame.mnDataset = mnNumDataset;

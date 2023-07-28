@@ -425,6 +425,7 @@ Frame::Frame(int imWidth, int imHeight, ORBextractor* extractor, ORBVocabulary* 
 
     // ORB extraction
     // TODO: set mTimeStamp from the image timestamp
+    std::cout << "waiting for frame " << mnId << std::endl;
     pArchandler->getFeaturesFast(mDescriptors, mvKeys, imToReplace, mTimeStamp);
 
     N = mvKeys.size();
