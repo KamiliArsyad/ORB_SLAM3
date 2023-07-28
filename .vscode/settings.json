@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.ejs": "html",
+    "mutex": "cpp",
+    "shared_mutex": "cpp",
+    "condition_variable": "cpp"
+  }
+}
