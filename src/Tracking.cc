@@ -119,8 +119,9 @@ Tracking::Tracking(System *pSys, ORBVocabulary* pVoc, FrameDrawer *pFrameDrawer,
         }
     }
 
-    // mpARCHandler = new ORB_SLAM3::ARCHandler("192.168.4.15", 9999, 0);
-    mpARCHandler = new ORB_SLAM3::ARCHandler("localhost", 9999, 0);
+    cv::FileStorage fSettings(strSettingPath, cv::FileStorage::READ);
+    std::string ip = fSettings["ARCHandler.IP"];
+    mpARCHandler = new ORB_SLAM3::ARCHandler(ip, 9999, 0);
 
 #ifdef REGISTER_TIMES
     vdRectStereo_ms.clear();
