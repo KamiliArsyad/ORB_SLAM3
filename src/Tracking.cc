@@ -119,7 +119,8 @@ Tracking::Tracking(System *pSys, ORBVocabulary* pVoc, FrameDrawer *pFrameDrawer,
         }
     }
 
-    mpARCHandler = new ORB_SLAM3::ARCHandler("192.168.4.15", 9999, 0);
+    // mpARCHandler = new ORB_SLAM3::ARCHandler("192.168.4.15", 9999, 0);
+    mpARCHandler = new ORB_SLAM3::ARCHandler("localhost", 9999, 0);
 
 #ifdef REGISTER_TIMES
     vdRectStereo_ms.clear();
