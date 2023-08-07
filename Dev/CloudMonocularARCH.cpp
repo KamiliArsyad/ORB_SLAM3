@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     if (argc < 5)
     {
         cerr << endl
-             << "Usage: ./mono_euroc path_to_vocabulary path_to_settings path_to_sample_image frames_to_capture (trajectory_file_name)" << endl;
+             << "Usage: CloudMonocularARCH path_to_vocabulary path_to_settings path_to_sample_image frames_to_capture (trajectory_file_name)" << endl;
         return 1;
     }
 

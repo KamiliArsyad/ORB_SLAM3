@@ -383,7 +383,8 @@ Frame::Frame(const cv::Mat &imGray, const double &timeStamp, ORBextractor* extra
 }
 
 /**
- * @brief Constructs a new Frame object for monocular ORB-SLAM2:
+ * @brief Constructs a new Frame object for monocular ORB-SLAM3:
+ * @details
  *      Computes the scale pyramid for the image, extracts ORB features, 
  *      undistorts keypoints, and assigns features to a grid for efficient spatial queries. 
  *      It also initializes various other properties of the Frame, such as the camera intrinsics 
@@ -392,7 +393,7 @@ Frame::Frame(const cv::Mat &imGray, const double &timeStamp, ORBextractor* extra
  *
  * @param imWidth The width of the grayscale image for the frame.
  * @param imHeight The height of the grayscale image for the frame.
- * @param extractor The ORB extractor to use for feature extraction.
+ * @param extractor The ORB extractor to use for feature extraction (not used as we use ARCH)
  * @param voc The ORB vocabulary to use for feature description.
  * @param pCamera The camera model to use for the frame.
  * @param distCoef The camera distortion coefficients.
