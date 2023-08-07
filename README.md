@@ -11,6 +11,10 @@ The ARCHandler integration I made here is kind of a matured version of my previo
 #### Modifications
 If there's any modifications you want to make, consider adding a buffer to the ARCHandler first before things get hairy with the cross-computer synchronization. I myself was not a very experienced c++ developer when I started this project and had to learn some things along the way; one of them is zmq. If you're experienced at low-level network optimization, you might want to consider modifying the way the encoder, sender, and decoder of this repository and the edge device repository works. Other than that, the modifications I made are pretty well-documented so do take your time to read the codebase.
 
+### Installation
+Please follow the installation instruction written below here (there should be no difference between installing this and the original system; I've modified the CMake file).
+
+## README From Original Repository
 ### V1.0, December 22th, 2021
 **Authors:** Carlos Campos, Richard Elvira, Juan J. Gómez Rodríguez, [José M. M. Montiel](http://webdiis.unizar.es/~josemari/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/).
 
